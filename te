@@ -1,0 +1,15 @@
+import requests
+
+# URL of the raw file
+url = "https://raw.githubusercontent.com/abindeva511/sports-analytics/main/technique"
+
+# Sending a GET request to the URL
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    content = response.text
+    print("File content loaded successfully.")
+    print(content)
+else:
+    print(f"Failed to load the file. Status code: {response.status_code}")
